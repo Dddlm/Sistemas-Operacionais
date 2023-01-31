@@ -1,7 +1,7 @@
 # **Gerenciador de Memória.**
 
 -Aluno: Diego William Lima Queiroz         
--Matrícula: ER05960
+-Matrícula: ER05222
 
 ### **Descrição:**
 
