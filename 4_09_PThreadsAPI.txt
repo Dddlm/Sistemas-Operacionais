@@ -1,0 +1,71 @@
+ginclude <pthread.h>
+gincluds <stdio.h>
+
+int sum; /* this data is shared by the thread(s) *+/
+void *runner (void *param); /* the thread */
+
+int main(int argc, char *argv[])
+r
+1
+
+ 
+
+pthreadt tid; /* the th:
+pthreadattrt attr; /*
+
+d identifier */
+t of thread attr
+
+     
+
+butes *+/
+
+if (arge != 2) (
+fprintf (stderr, "usage: a.out <integer value>in'");
+return -1;
+
+)
+
+if (atoi(argv[1]) < 0) (
+fprintf(stderr, "sd must be >= Oin",atoi (argv[1]));
+return -1;
+
+ 
+
+/* get the default attributes */
+pthreadattr.init (&attr);
+
+/* create the thread */
+
+pthread create (&tid, &attr, runner, argv[1]);
+/* wait for the thread to exit */
+pthread join (tid,NULL) ;
+
+ 
+
+printf ("sum = din", sum);
+
+)
+
+/* The thread will begin control in this function */
+void *runner (void *param)
+(
+
+int i, upper = atoi (param);
+
+sum = 0;
+
+ 
+
+for (i = 1; 1 «= upper; i++)
+
+sum += i;
+
+ 
+
+pthreadexit (0);
+
+)
+
+Figure 4.6 Multithreaded C program using the Pthreads API.
+
